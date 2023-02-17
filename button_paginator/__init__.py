@@ -232,11 +232,11 @@ class Paginator(discord.ui.View):
             current = self.embeds[self.page]
             if isinstance(current, str):
                 self.message = await self.destination.reply(
-                    content=current, embed=None, view=self
+                    mention_author=False, content=current, embed=None, view=self
                 )
             elif isinstance(current, discord.Embed):
                 self.message = await self.destination.reply(
-                    content=None, embed=current, view=self
+                    mention_author=False, content=None, embed=current, view=self
                 )
             elif isinstance(current, tuple):
                 dct = {}
@@ -246,7 +246,7 @@ class Paginator(discord.ui.View):
                     elif isinstance(item, discord.Embed):
                         dct["embed"] = item
                 self.message = await self.destination.reply(
-                    content=dct.get("content", None),
+                    mention_author=False, content=dct.get("content", None),
                     embed=dct.get("embed", None),
                     view=self,
                 )
