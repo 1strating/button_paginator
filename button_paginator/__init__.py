@@ -96,7 +96,7 @@ class show_page(discord.ui.Button):
         await view.message.channel.send(str(view.page))
 
 
-class goto_modal(discord.ui.Modal, title="vile pagination"):
+class goto_modal(discord.ui.Modal, title="remedy pagination"):
     def __init__(self, button):
         super().__init__()
         self.button = button
