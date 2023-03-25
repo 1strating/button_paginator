@@ -101,7 +101,7 @@ class goto_modal(discord.ui.Modal, title="remedy pagination"):
         super().__init__()
         self.button = button
         self.page_num = discord.ui.TextInput(
-            label="Vile Cmd Menu",
+            label="remedy",
             placeholder=f"type numbers to advance to it's corresponding page",
             style=discord.TextStyle.short,
             required=True,
