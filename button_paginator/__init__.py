@@ -2,9 +2,7 @@ from inspect import iscoroutinefunction as iscoro, isfunction as isfunc
 import asyncio, json
 import discord, typing
 
-with open('config.json') as f:
-    config = json.load(f)
-    warn = config["warn2"]
+from modules.config import Color, Emoji
 
 async def aiter(
     iterable: typing.Iterator[typing.Any],
@@ -261,8 +259,8 @@ class Paginator(discord.ui.View):
                 return await interaction.response.send_message(
                     ephemeral=True,
                     embed=discord.Embed(
-                        color=0xcc3434,
-                        description=f"{warn} {interaction.user.mention}: you can't interact with this embed",
+                        color=Color.decline,
+                        description=f"{Emoji.decline} {interaction.user.mention}: you can't interact with this embed",
                     ),
                 )
             else:
